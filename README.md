@@ -1,70 +1,103 @@
-# eonik MCP companion (Agent Skill)
+<div align="center">
+  <br />
+  <a href="https://eonik.ai">
+    <img src="https://eonik.ai/logo.svg" alt="eonik" width="120" />
+  </a>
+  <h1 align="center">eonik MCP Companion · Agent Skill</h1>
+  <p align="center">
+    <strong>How Claude should think when it has eonik in its hands</strong>
+  </p>
+  <p align="center">
+    <a href="https://eonik.ai">Website</a> •
+    <a href="https://github.com/eonik-ai/eonik-mcp">eonik-mcp (stdio server)</a> •
+    <a href="https://api.eonik.ai/docs">API Docs</a>
+  </p>
+</div>
 
-**Agent Skill** that teaches Claude how to use the **[eonik](https://eonik.ai) remote MCP server** responsibly: Meta Ads audits, creative intelligence, Ad Library research, trends, and gated launch workflows.
+---
 
-Pair this repository with the **eonik MCP server** submission (same directory product). It does **not** replace the MCP connection—it adds procedural guidance so agents pick the right tools and confirm destructive actions.
+## What this is
 
-## Repository layout
+This repository is an **[Agent Skill](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** for products that support filesystem skills (Claude Code, Claude API with skills, Claude.ai custom skills, and similar). It is **not** the MCP server itself.
 
-| File | Purpose |
-|------|---------|
-| `SKILL.md` | Anthropic Agent Skill entrypoint (YAML metadata + instructions) |
-| `reference.md` | Tool catalog and parameters (progressive disclosure) |
+- **[eonik-mcp](https://github.com/eonik-ai/eonik-mcp)** is the stdio MCP bridge (`npx eonik-mcp@latest`) that talks to `https://api.eonik.ai`.
+- **This skill** is the playbook: when to call which tool, how to ground answers in `get_brand_context`, and when to stop and ask the human before `create_ad_creation_run`, `compile_seed_spec`, or `launch_ad_run`.
 
-## Install (Claude Code / filesystem Skills)
+Together, they turn a generic model into a **disciplined** marketing co-pilot: same tools, better judgment.
 
-Clone into your Skills directory (see [Claude Code Skills](https://code.claude.com/docs/en/skills)) or unpack beside other skills:
+---
+
+## Why it exists
+
+Raw tool lists do not teach an agent to:
+
+- Load **brand and competitor context** before giving strategy.
+- Prefer **read-only** audits and insights before any **write** to Meta or eonik.
+- Summarize in **plain language** instead of dumping JSON.
+
+`SKILL.md` encodes those habits. `reference.md` is optional deep detail—loaded only when needed ([progressive disclosure](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)).
+
+---
+
+## Capability map (aligned with eonik MCP)
+
+The same four phases as the [eonik MCP server](https://github.com/eonik-ai/eonik-mcp) README:
+
+| Phase | Tools | Skill behavior |
+|--------|--------|----------------|
+| **Analyze** | `run_budget_audit`, `get_creative_autopsy` | Run when the user wants account health, leaks, or creative Command Center–style diagnosis. |
+| **Ideate** | `discover_trends`, `get_brand_context`, `search_ad_library`, `get_insights_feed`, `get_experimentation_gaps` | Start from `get_brand_context` when advice should be on-brand; use filters on Ad Library and trends when relevant. |
+| **Produce** | `create_ad_creation_run`, `compile_seed_spec` | Only after **explicit** user confirmation; treat as creating or updating orchestration state in eonik. |
+| **Deploy** | `launch_ad_run` | Only after **explicit** confirmation; affects Meta. |
+
+Neural mapping, guardrails, and tenant isolation stay in the **eonik cloud**—this repo is instructions only.
+
+---
+
+## Install the skill
+
+### Claude Code (filesystem)
+
+Clone into your skills directory (see [Claude Code · Skills](https://code.claude.com/docs/en/skills)):
 
 ```bash
 git clone https://github.com/eonik-ai/eonik-mcp-skill.git
 ```
 
-For **Claude.ai** or **API**, zip the folder (with `SKILL.md` at the root of the archive) and upload per product docs.
+### Claude.ai or API (upload)
 
-## MCP connection
+Zip the repository so **`SKILL.md` is at the root** of the archive, then upload per your plan’s **custom Skills** flow.
 
-Connect the **eonik MCP** SSE endpoint from your client using your eonik API key or OAuth flow documented on the server. This skill assumes those tools appear in the agent’s MCP tool list.
+### Relationship to MCP
 
-## Directory submission (copy/paste)
+Install **either** the remote SSE connector to `https://api.eonik.ai/mcp/sse` **or** the local **[eonik-mcp](https://github.com/eonik-ai/eonik-mcp)** stdio server—the skill does not replace authentication; it assumes MCP tools are already available to the agent.
 
-**Skill Name**
+---
 
-```text
-eonik Marketing & Ads MCP Companion
+## Repository layout
+
+```
+eonik-mcp-skill/
+├── SKILL.md       # Metadata + agent instructions (required)
+├── reference.md   # Tool parameters and lookup table
+├── README.md      # This file
+└── LICENSE        # MIT-0
 ```
 
-**Skill Description**
+---
 
-```text
-Teaches Claude to use the eonik MCP server for Meta Ads budgets, creative autopsy, insights, experimentation gaps, Ad Library search, and trends—while requiring explicit confirmation before any ad creation or Meta launch workflows.
-```
+## Security & privacy
 
-**GitHub URL**
+- No API keys, OAuth tokens, or customer data belong in this repo.
+- All execution and isolation are enforced by **api.eonik.ai** when tools run.
+- Teach agents to treat mutating tools like production actions—**confirm first**.
 
-After creating the public repository, use:
-
-```text
-https://github.com/eonik-ai/eonik-mcp-skill
-```
-
-(Replace `eonik-ai` / repo name with your org and chosen slug.)
-
-**Extra Information**
-
-```text
-Companion skill for the eonik remote MCP server (SSE). Read-heavy workflows are default; mutating tools (create run, compile seed spec, launch ad) are gated in SKILL.md. Optional reference.md lists tool names aligned with server registration. MIT licensed; no secrets in-repo—auth is via the client MCP connection.
-```
-
-**Related Plugins**
-
-```text
-None planned—cross-promote the separate MCP server listing only unless you publish a Claude Code plugin bundle later.
-```
+---
 
 ## License
 
-MIT-0 (see [LICENSE](LICENSE)).
+MIT-0 — see [LICENSE](LICENSE).
 
-## Support
+---
 
-Product: [eonik.ai](https://eonik.ai)
+*Built for the same loop as [eonik-mcp](https://github.com/eonik-ai/eonik-mcp): analyze → ideate → produce → deploy — with guardrails in the skill layer.*

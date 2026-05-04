@@ -1,11 +1,10 @@
 ---
 name: eonik-mcp-companion
 description: >-
-  Guides effective use of the eonik remote MCP server for Meta Ads performance,
-  creative intelligence, competitor Ad Library research, cultural trends, and
-  brand-grounded recommendations. Use when the eonik MCP connector is available,
-  the user mentions eonik, or asks for Meta budget audits, creative autopsy,
-  experimentation planning, or launching assets via eonik workflows.
+  Guides effective use of the eonik MCP server for Meta Ads creative
+  intelligence — budget audits, creative autopsy, competitor research,
+  experimentation planning, and ad launching. Activates when eonik is connected
+  or user asks about ad performance.
 ---
 
 # eonik MCP companion

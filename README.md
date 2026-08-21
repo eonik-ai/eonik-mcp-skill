@@ -1,58 +1,67 @@
 <div align="center">
-  <br />
   <a href="https://www.eonik.ai">
-    <img src="https://www.eonik.ai/logo.svg" alt="eonik" width="120" />
+    <img src="https://www.eonik.ai/logo.svg" alt="eonik" width="160" />
   </a>
-  <h1 align="center">eonik MCP Companion · Agent Skill</h1>
-  <p align="center">
-    <strong>How Claude should think when it has eonik's brand-brain in its hands</strong>
+  <h1>eonik companion skill</h1>
+  <p><strong>Finished, on-brand ads — without the busywork.</strong></p>
+  <p>How Claude should work once it can see your eonik account: read first, draft from receipts, never spend. You approve every cut.</p>
+  <p>
+    <a href="https://www.eonik.ai">Website</a> ·
+    <a href="https://www.eonik.ai/download">Download for Mac</a> ·
+    <a href="https://github.com/eonik-ai/eonik-mcp">eonik-mcp</a> ·
+    <a href="https://www.eonik.ai/mcp">Setup</a>
   </p>
-  <p align="center">
-    <a href="https://www.eonik.ai">Website</a> •
-    <a href="https://github.com/eonik-ai/eonik-mcp">eonik-mcp</a> •
-    <a href="https://www.eonik.ai/mcp">MCP essay</a>
+  <p>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT--0-18181B?style=flat-square" alt="MIT-0 license" /></a>
+    <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"><img src="https://img.shields.io/badge/Claude-Agent%20Skill-d97706?style=flat-square" alt="Claude Agent Skill" /></a>
+  </p>
+  <p>
+    <strong>English</strong> ·
+    <a href="docs/readme/README.es.md">Español</a> ·
+    <a href="docs/readme/README.pt-BR.md">Português</a> ·
+    <a href="docs/readme/README.fr.md">Français</a> ·
+    <a href="docs/readme/README.hi.md">हिन्दी</a> ·
+    <a href="docs/readme/README.zh-CN.md">简体中文</a> ·
+    <a href="docs/readme/README.ja.md">日本語</a> ·
+    <a href="docs/readme/README.ko.md">한국어</a>
   </p>
 </div>
 
 ---
 
-## What this is
+eonik is a **Mac app for making ads**. This repo is **not** the Mac app and **not** the connector.
 
-An **[Agent Skill](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** for hosts that load filesystem skills. It is **not** the MCP server.
+- **[eonik-mcp](https://github.com/eonik-ai/eonik-mcp)** connects Claude, Cursor, or Codex to your account.
+- **This skill** is the playbook those hosts load: ground in the brand, use the research archive, remember what you said, write briefs from facts. **Never launch ads or move budget.**
 
-- **[eonik-mcp](https://github.com/eonik-ai/eonik-mcp)** is the stdio bridge to `https://api.eonik.ai` (`GET /api/tools/manifest` + `POST /api/tools/dispatch`).
-- **This skill** is the playbook: ground in brand + ledger, use the watch archive, deconstruct references, remember verbatim, author briefs from grounding. **Never launch or move budget.**
+## What it covers
 
-eonik is a Mac app for making ads. MCP does not replace the app. Agents read and draft; **you approve every cut.**
+| Goal | How |
+|------|-----|
+| Orient | Brand + notes you already saved |
+| Research | Competitor archive, ad breakdowns, how surviving ads are built |
+| Remember | Save your words verbatim |
+| Produce | Receipts in, **you** (or the assistant) author the brief |
 
-## Capability map (live `command_tools.py`)
-
-Not Analyze → Ideate → Produce → Deploy. Deploy-to-Meta **does not exist**.
-
-| Station | Tools (representative) | Behavior |
-|---------|------------------------|----------|
-| **Gather** | `get_brand_briefing`, `get_brand_context`, `get_context_ledger`, `get_account_condition`, `get_recent_slates`, `get_account_memory`, `list_my_ads`, competitor + swipe reads | Facts only |
-| **Research** | `deconstruct_ad`, `get_ad_deconstruction`, `get_competitor_patterns`, `get_competitor_timeline`, `get_craft_playbook`, `probe_asset_duration` | eonik's labor; you reason |
-| **Remember** | `save_context_note`, `save_brand_truth`, `save_plan`, `remember`, `recall` | Verbatim; reviewable in Brand |
-| **Produce** | `get_brief_grounding` (prefer); `generate_creative_brief` (deprecated) | Agent authors from receipts |
-
-Retired forever: `launch_ad_run`, `run_budget_audit`, `create_ad_creation_run`, `compile_seed_spec`, hypothesis / budget-leak tools.
+There is no “deploy to Meta.” Upload stays a human click.
 
 ## Install
 
-Clone into the host's skills directory, or zip with **`SKILL.md` at the archive root**.
+Clone into the host’s skills folder, or zip with **`SKILL.md` at the archive root**.
 
-MCP connection is separate — install [eonik-mcp](https://github.com/eonik-ai/eonik-mcp) or the API SSE connector. This skill does not authenticate.
+Connection is separate: install [eonik-mcp](https://github.com/eonik-ai/eonik-mcp) (or the hosted connector). This skill does not hold API keys.
 
-## Layout
+Tool names for agents: [reference.md](reference.md).
 
-```
-eonik-mcp-skill/
-├── SKILL.md
-├── reference.md
-├── README.md
-└── LICENSE
-```
+## The eonik family
+
+| | |
+|---|---|
+| Mac app | [Download](https://www.eonik.ai/download) · editor free · macOS 15+ · Apple silicon |
+| Connector | [eonik-mcp](https://github.com/eonik-ai/eonik-mcp) |
+| This playbook | [eonik-mcp-skill](https://github.com/eonik-ai/eonik-mcp-skill) |
+| Homebrew | [homebrew-tap](https://github.com/eonik-ai/homebrew-tap) |
+| Save ads you see | [Chrome extension](https://chromewebstore.google.com/detail/eonik/ikjbopcpohlogfbccbpcoglefjlbdcie) |
 
 ## License
 

@@ -1,8 +1,8 @@
-# eonik MCP — tool reference
+# eonik — tool reference
 
-Catalog follows the live backend registry (`command_tools.py` / `GET /api/tools/manifest`). Clients discover via MCP `tools/list`. This file is a human map, not a second schema.
+The live catalog comes from the user’s eonik account (`tools/list`). This file is a human map, not a second schema.
 
-Remote stdio ([eonik-mcp](https://github.com/eonik-ai/eonik-mcp)) **does not offer** `record_validation_decision` or `save_creative_read` (Mac / UI owned).
+The public connector ([eonik-mcp](https://github.com/eonik-ai/eonik-mcp)) **does not offer** `record_validation_decision` or `save_creative_read` (those stay in the Mac app).
 
 ## Gather (read-only facts)
 
@@ -39,7 +39,7 @@ Remote stdio ([eonik-mcp](https://github.com/eonik-ai/eonik-mcp)) **does not off
 | `get_ad_for_clone` | Resolve one archived ad to clonable media (structure clone, not asset theft) |
 | `get_validation_grounding` | Pre-export norms pack for a **draft signature** — facts + arithmetic, never predictions |
 
-## Remember (verbatim ledger)
+## Remember (verbatim notes)
 
 | Tool | Role |
 |------|------|

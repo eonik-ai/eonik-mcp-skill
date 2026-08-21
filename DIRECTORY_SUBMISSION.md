@@ -1,13 +1,13 @@
 # Directory submission (internal)
 
-Use this when filling vendor forms for the skill listing. **Not** part of the public product story.
+Use this when filling vendor forms. **Not** part of the public product story.
 
-**Skill name:** eonik Marketing & Ads MCP Companion
+**Skill name:** eonik MCP companion
 
-**Description:** Guides effective use of the eonik MCP server for Meta Ads creative intelligence — budget audits, creative autopsy, competitor research, experimentation planning, and ad launching. Activates when eonik is connected or user asks about ad performance.
+**Description:** Playbook for eonik's brand-brain MCP: brand context, competitor research archive, own-account readouts, deconstruction, memory ledger, and receipt-bound brief grounding. Agents read and draft; they never spend. You approve every cut.
 
 **GitHub URL:** https://github.com/eonik-ai/eonik-mcp-skill
 
-**Extra information:** Companion skill for the eonik remote MCP server (SSE or stdio via the [eonik-mcp](https://github.com/eonik-ai/eonik-mcp) package). Read-heavy workflows are default; mutating tools are gated in `SKILL.md`. No secrets in-repo; auth is via the client MCP connection. MIT-0.
+**Extra information:** Companion to [eonik-mcp](https://github.com/eonik-ai/eonik-mcp) (stdio → `GET /api/tools/manifest` + `POST /api/tools/dispatch`). No secrets in-repo. MIT-0. Does not launch ads or move budget.
 
 **Related plugins:** None unless you publish a separate plugin bundle.

@@ -2,18 +2,16 @@
   <a href="https://www.eonik.ai">
     <img src="https://www.eonik.ai/logo.svg" alt="eonik" width="160" />
   </a>
-  <h1>eonik companion skill</h1>
-  <p><strong>Finished, on-brand ads — without the busywork.</strong></p>
-  <p>How Claude should work once it can see your eonik account: read first, draft from receipts, never spend. You approve every cut.</p>
+  <h1>eonik</h1>
+  <p><strong>Finished, on-brand ads without the busywork.</strong></p>
+  <p>You see what’s worth making. eonik builds the cut. You approve. This folder is how the assistant should work once it can see your account. The cut itself is made on Mac.</p>
   <p>
     <a href="https://www.eonik.ai">Website</a> ·
     <a href="https://www.eonik.ai/download">Download for Mac</a> ·
-    <a href="https://github.com/eonik-ai/eonik-mcp">eonik-mcp</a> ·
-    <a href="https://www.eonik.ai/mcp">Setup</a>
+    <a href="https://www.eonik.ai/mcp">Connect an assistant</a>
   </p>
   <p>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT--0-18181B?style=flat-square" alt="MIT-0 license" /></a>
-    <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"><img src="https://img.shields.io/badge/Claude-Agent%20Skill-d97706?style=flat-square" alt="Claude Agent Skill" /></a>
   </p>
   <p>
     <strong>English</strong> ·
@@ -29,10 +27,11 @@
 
 ---
 
-eonik is a **Mac app for making ads**. This repo is **not** the Mac app and **not** the connector.
+eonik gets you **finished, on-brand ads without the busywork.** You start from an ad that already works, build the cut from your footage, check it against your brand, and get it approved. **Never launch ads or move budget.**
 
-- **[eonik-mcp](https://github.com/eonik-ai/eonik-mcp)** connects Claude, Cursor, or Codex to your account.
-- **This skill** is the playbook those hosts load: ground in the brand, use the research archive, remember what you said, write briefs from facts. **Never launch ads or move budget.**
+You make the cut in the **Mac app** ([download](https://www.eonik.ai/download)). This folder is how Claude (or another assistant) should work once it can see the user’s account: ground in the brand, use the research archive, remember what they said, write briefs from facts.
+
+Connect the assistant at [eonik.ai/mcp](https://www.eonik.ai/mcp) (`npx -y eonik-mcp` plus an API key).
 
 ## What it covers
 
@@ -47,19 +46,22 @@ There is no “deploy to Meta.” Upload stays a human click.
 
 ## Install
 
-Clone into the host’s skills folder, or zip with **`SKILL.md` at the archive root**.
+Clone into the host’s skills folder, zip with **`SKILL.md` at the archive root**, or:
 
-Connection is separate: install [eonik-mcp](https://github.com/eonik-ai/eonik-mcp) (or the hosted connector). This skill does not hold API keys.
+```
+openclaw skills install @techievena/eonik
+```
 
-Tool names for agents: [reference.md](reference.md).
+This folder does not hold API keys.
 
-## The eonik family
+Tool names for assistants: [reference.md](reference.md).
+
+## Also
 
 | | |
 |---|---|
-| Mac app | [Download](https://www.eonik.ai/download) · editor free · macOS 15+ · Apple silicon |
-| Connector | [eonik-mcp](https://github.com/eonik-ai/eonik-mcp) |
-| This playbook | [eonik-mcp-skill](https://github.com/eonik-ai/eonik-mcp-skill) |
+| Download for Mac | [eonik.ai/download](https://www.eonik.ai/download) · editor free · macOS 15+ · Apple silicon |
+| Connect an assistant | [eonik.ai/mcp](https://www.eonik.ai/mcp) |
 | Homebrew | [homebrew-tap](https://github.com/eonik-ai/homebrew-tap) |
 | Save ads you see | [Chrome extension](https://chromewebstore.google.com/detail/eonik/ikjbopcpohlogfbccbpcoglefjlbdcie) |
 

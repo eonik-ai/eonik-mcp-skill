@@ -42,4 +42,4 @@ eonik gets you **finished, on-brand ads without the busywork.** Use this skill w
 
 ## Further detail
 
-Tool catalog: [reference.md](reference.md).
+Tool catalog: [reference.md](../../reference.md).

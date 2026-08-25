@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "eonik",
+  "version": "2.0.0",
+  "description": "Read a brand's notes, archived competitor ads, and own-account facts, then prepare receipt-backed creative briefs. Never spends; cuts are approved in the eonik Mac app.",
+  "author": {
+    "name": "eonik",
+    "email": "connect@eonik.ai",
+    "url": "https://www.eonik.ai"
+  },
+  "homepage": "https://www.eonik.ai/mcp",
+  "repository": "https://github.com/eonik-ai/eonik-mcp-skill",
+  "license": "MIT-0",
+  "keywords": [
+    "eonik",
+    "video-ads",
+    "creative-research",
+    "brand",
+    "mcp"
+  ]
+}

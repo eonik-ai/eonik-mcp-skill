@@ -29,9 +29,9 @@
 
 eonik gets you **finished, on-brand ads without the busywork.** You start from an ad that already works, build the cut from your footage, check it against your brand, and get it approved. **Never launch ads or move budget.**
 
-You make the cut in the **Mac app** ([download](https://www.eonik.ai/download)). This folder is how Claude (or another assistant) should work once it can see the user’s account: ground in the brand, use the research archive, remember what they said, write briefs from facts.
+You make the cut in the **Mac app** ([download](https://www.eonik.ai/download)). This plugin is how Cursor, Claude, or another assistant should work once it can see the user’s account: ground in the brand, use the research archive, remember what they said, write briefs from facts.
 
-Connect the assistant at [eonik.ai/mcp](https://www.eonik.ai/mcp) (`npx -y eonik-mcp` plus an API key).
+Connect the assistant at [eonik.ai/mcp](https://www.eonik.ai/mcp) through the host’s OAuth flow. Hosts without remote MCP support can run `npx -y eonik-mcp@2.0.0` with an API key.
 
 ## What it covers
 
@@ -46,13 +46,21 @@ There is no “deploy to Meta.” Upload stays a human click.
 
 ## Install
 
+### Cursor and Agent Plugins hosts
+
+This repository implements the [Agent Plugins 1.0 standard](https://agent-plugins.org): `plugin.json` describes the plugin, `skills/eonik/SKILL.md` teaches the workflow, and `mcp.json` connects to eonik’s remote OAuth MCP.
+
+Install it from Cursor Marketplace once approved, or load the repository as a local Agent Plugin. The host opens OAuth; do not paste an API key into chat.
+
+### Claude and other skill hosts
+
 Clone into the host’s skills folder, zip with **`SKILL.md` at the archive root**, or:
 
 ```
 openclaw skills install @techievena/eonik
 ```
 
-This folder does not hold API keys.
+The Claude plugin adapter uses `npx -y eonik-mcp@2.0.0` and reads `EONIK_API_KEY` from the host environment. This repository does not hold API keys.
 
 Tool names for assistants: [reference.md](reference.md).
 

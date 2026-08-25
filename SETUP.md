@@ -2,10 +2,16 @@
 
 The skill assumes the host already has eonik tools. Auth is the host connection. Nothing here stores keys.
 
-## Claude Code / Grok Build / Cursor (stdio)
+## Cursor / Agent Plugins hosts (remote OAuth)
+
+1. Install the eonik Agent Plugin from the marketplace or load this repository locally.
+2. The plugin’s `mcp.json` connects to `https://api.eonik.ai/mcp`.
+3. Complete the OAuth flow opened by the host, confirm eonik tools appear, then ask: “Orient me on this brand.”
+
+## Claude Code / Grok Build (stdio)
 
 1. Create an API key in eonik workspace settings.
-2. The plugin’s `.mcp.json` runs `npx -y eonik-mcp`. Set `EONIK_API_KEY` in the host env (and optional `EONIK_API_URL`, `EONIK_BRAND_ID`).
+2. The plugin’s `.mcp.json` runs `npx -y eonik-mcp@2.0.0`. Set `EONIK_API_KEY` in the host env (and optional `EONIK_API_URL`, `EONIK_BRAND_ID`).
 3. Confirm tools appear, then ask: “Orient me on this brand.”
 
 ## Gemini CLI

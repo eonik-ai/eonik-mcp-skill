@@ -2,7 +2,7 @@
   "mcpServers": {
     "eonik": {
       "command": "npx",
-      "args": ["-y", "eonik-mcp"]
+      "args": ["-y", "eonik-mcp@2.0.0"]
     }
   }
 }

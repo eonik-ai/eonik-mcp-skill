@@ -2,10 +2,10 @@
 name: eonik
 description: >-
   Finished, on-brand ads without the busywork. Use when eonik tools are
-  connected or the user asks about their ads, brand, competitors, or what
-  to make next. The assistant reads brand notes, the research archive, and
-  performance facts, then drafts. It never spends. You approve every cut.
-  The cut itself is made on Mac.
+  connected or the user asks about their brand, competitor ads, own-account
+  creative facts, what to consider next, or an evidence-backed brief for a
+  cut in eonik. The assistant reads and drafts; it never spends. Timeline
+  editing and approval remain in the eonik Mac app.
 ---
 
 # eonik

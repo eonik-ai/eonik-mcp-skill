@@ -14,7 +14,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "eonik-mcp"
+        "eonik-mcp@2.0.0"
       ]
     }
   }

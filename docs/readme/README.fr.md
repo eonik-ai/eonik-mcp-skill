@@ -1,6 +1,7 @@
 <div align="center">
   <a href="https://www.eonik.ai"><img src="https://www.eonik.ai/logo.svg" alt="eonik" width="160" /></a>
-  <h1>Skill compagnon eonik</h1>
+  <h1>eonik</h1>
+  <p><strong>Des pubs finies, on-brand, sans le sale boulot.</strong></p>
   <p>
     <a href="../../README.md">English</a> · <a href="README.es.md">Español</a> ·
     <a href="README.pt-BR.md">Português</a> · <strong>Français</strong> ·
@@ -9,4 +10,4 @@
   </p>
 </div>
 
-Comment Claude doit travailler une fois votre compte eonik visible : lire d’abord, rédiger à partir de preuves, **ne jamais dépenser**. [Connecteur](https://github.com/eonik-ai/eonik-mcp) · [Télécharger Mac](https://www.eonik.ai/download)
+Des pubs finies, on-brand, sans le sale boulot. Le montage se fait sur Mac. [Télécharger](https://www.eonik.ai/download) · [Connecter un assistant](https://www.eonik.ai/mcp)

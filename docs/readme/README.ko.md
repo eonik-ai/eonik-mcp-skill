@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://www.eonik.ai"><img src="https://www.eonik.ai/logo.svg" alt="eonik" width="160" /></a>
-  <h1>eonik 컴패니언 스킬</h1>
+  <h1>eonik</h1>
   <p>
     <a href="../../README.md">English</a> · <a href="README.es.md">Español</a> ·
     <a href="README.pt-BR.md">Português</a> · <a href="README.fr.md">Français</a> ·
@@ -9,4 +9,4 @@
   </p>
 </div>
 
-eonik 계정이 보일 때 Claude가 따를 방식: 먼저 읽고, 근거로 초안을 쓰고, **절대 지출하지 않습니다**. [커넥터](https://github.com/eonik-ai/eonik-mcp) · [Mac 다운로드](https://www.eonik.ai/download)
+완성된 온브랜드 광고, 잡일 없이. 컷은 Mac에서 만듭니다. [다운로드](https://www.eonik.ai/download) · [어시스턴트 연결](https://www.eonik.ai/mcp)

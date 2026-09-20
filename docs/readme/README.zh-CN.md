@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://www.eonik.ai"><img src="https://www.eonik.ai/logo.svg" alt="eonik" width="160" /></a>
-  <h1>eonik 配套技能</h1>
+  <h1>eonik</h1>
   <p>
     <a href="../../README.md">English</a> · <a href="README.es.md">Español</a> ·
     <a href="README.pt-BR.md">Português</a> · <a href="README.fr.md">Français</a> ·
@@ -9,4 +9,4 @@
   </p>
 </div>
 
-Claude 能看到你的 eonik 账户后应如何工作：先读，凭收据起草，**绝不花钱**。[连接器](https://github.com/eonik-ai/eonik-mcp) · [下载 Mac 版](https://www.eonik.ai/download)
+成品、符合品牌的广告，少做杂活。成片在 Mac 上完成。[下载](https://www.eonik.ai/download) · [连接助手](https://www.eonik.ai/mcp)

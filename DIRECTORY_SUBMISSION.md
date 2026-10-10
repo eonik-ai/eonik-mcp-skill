@@ -4,10 +4,15 @@ Use this when filling vendor forms.
 
 **Skill name:** eonik
 
-**Description:** Finished, on-brand ads without the busywork. Connect Cursor, Claude, or another assistant to your eonik account. It reads brand notes, archived competitor ads, and own-account creative facts, then prepares receipt-backed briefs. It never spends. Timeline editing and approval remain in the eonik Mac app.
+**Description:** Make a brand's adapts with eonik: every size of a creative a media plan asks for,
+with the brand's fonts, rules and layout kept the same way on every size, then checked, sent for
+approval and delivered, made in the eonik app on the person's Mac. Never launches ads, moves budget
+or makes a choice that is the person's.
 
 **GitHub URL:** https://github.com/eonik-ai/eonik-mcp-skill
 
-**Extra information:** Agent Plugins 1.0 package with remote OAuth MCP. Stdio fallback: `npx -y eonik-mcp@2.0.0` with `EONIK_API_KEY`. No secrets in-repo. MIT-0. Does not launch ads or move budget.
+**Extra information:** Agent Plugins 1.0 package with the remote MCP server
+`https://api.eonik.ai/mcp` (OAuth). Local fallback: `npx -y eonik-mcp@3.0.0` with
+`EONIK_API_KEY` and `EONIK_BRAND_ID`. No secrets in the repository. MIT-0.
 
-**Related plugins:** None unless you publish a separate plugin bundle.
+**Related plugins:** None.

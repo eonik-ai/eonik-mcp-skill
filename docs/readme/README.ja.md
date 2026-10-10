@@ -9,4 +9,4 @@
   </p>
 </div>
 
-完成されたオンブランド広告を、雑務なしで。カットは Mac で作ります。[ダウンロード](https://www.eonik.ai/download) · [アシスタントをつなぐ](https://www.eonik.ai/mcp)
+デザイナーがマスターを作り、eonik がメディアプランに必要なすべてのサイズを、ブランドに沿って Mac の eonik アプリで作ります（[ダウンロード](https://www.eonik.ai/download)）。Claude、ChatGPT、Cursor、Codex、VS Code から依頼できます。あなたが決めるまで、何も作成・変更・送信されません。 このプラグインは、アシスタントが eonik に依頼する方法を教えます。 [アシスタントを接続](https://www.eonik.ai/mcp)

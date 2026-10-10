@@ -1,65 +1,48 @@
-# eonik — tool reference
+# eonik: the tools
 
-The live catalog comes from the user’s eonik account (`tools/list`). This file is a human map, not a second schema.
+The live list comes from the person's eonik connection (`tools/list`); this is a map of it, not
+a second schema. `tests/test_the_skill_names_only_served_tools.py` in eonik-backend fails when this
+file names a tool the server does not serve.
 
-The public connector ([eonik-mcp](https://github.com/eonik-ai/eonik-mcp)) **does not offer** `record_validation_decision` or `save_creative_read` (those stay in the Mac app).
+## The work (run in the person's eonik app, signed in to this connection's account)
 
-## Gather (read-only facts)
+| Tool | What it does |
+|---|---|
+| `get_adapts_status` | Where things stand: what needs the person, what is being made, what came back, which of their computers has eonik open |
+| `find_creatives` | Finds creatives by name, project or theme in the folders linked in eonik |
+| `make_adapts` | Opens eonik's own review of a creative's sizes (the sizes named, or the person picks from eonik's); nothing is made until the person presses Make |
+| `revise_adapts` | Prepares a change to sizes already made; shown to the person before it is applied |
+| `check_before_sending` | The brand's rules on every size, reported as facts |
+| `send_for_approval` | Shares the sizes to the brand's review room and returns the link |
+| `get_client_notes` | What reviewers said, note by note, on which size |
+| `deliver_set` | Exports every size to the delivery folder, named by size, zipped |
+| `update_project_facts` | Saves a project's changed RERA number, price, offer or phase, then shows which of its creatives no longer say what the facts say |
+| `check_copy` | Checks Meta or Google copy against the brand's limits and legal lines |
 
-| Tool | Role |
-|------|------|
-| `get_brand_briefing` | Orientation: brand, rails, verbatim memory, what changed, corpus inventory |
-| `get_brand_context` | Brand DNA |
-| `get_context_ledger` | Truths, dated plans, recent corrections — verbatim |
-| `get_account_condition` | live / dark / not_connected |
-| `get_recent_slates` | Monday considerations + receipts |
-| `get_account_memory` | Own-account tested / won / lost by dimension; two horizons (`craft_profile` vs `craft_standing`); `held` = separates, check delta **sign** |
-| `get_watch_activity` | Recent competitor / category activity |
-| `get_competitor_channels` | Watched competitors × channel counts |
-| `get_competitor_assets` | One competitor, one channel, paged (`channel`: meta_ad_library \| tiktok_ad_library \| google_ads_transparency \| instagram_organic \| instagram_hashtag) |
-| `get_category_topics` | Hashtag topic bundles |
-| `get_my_competitor_ads` | Ads from configured competitors |
-| `search_competitor_ads` | Global library search |
-| `search_swipe` | Marketer's own swipe file |
-| `lookup_ad_performance` | One **own** ad |
-| `list_my_ads` | Own ads dashboard (facts) |
-| `get_campaign_performance` | One **own** campaign breakdown |
-| `sync_my_ads` | Queue read-only Meta insights sync (never writes to Meta) |
+## The brand, and what it has learned
 
-## Research (labor; agent reasons)
+| Tool | What it does |
+|---|---|
+| `get_brand_overview` | The brand: profile, rules, what the person told eonik, watched competitors |
+| `search_brand_memory` | What the person told eonik before, in their words |
+| `save_brand_note` | Saves a rule, preference or correction, verbatim |
+| `save_dated_plan` | Saves a dated sale, launch or season |
 
-| Tool | Role |
-|------|------|
-| `deconstruct_ad` | Queue scene-split + transcript + structure (public ads) |
-| `get_ad_deconstruction` | Read the breakdown |
-| `get_competitor_patterns` | Counts across deconstructed ads |
-| `get_competitor_timeline` | Chronological archive + lifespans |
-| `get_craft_playbook` | How surviving ads are made — descriptive pointers, not causation |
-| `probe_asset_duration` | Measure archived creative length |
-| `get_ad_for_clone` | Resolve one archived ad to clonable media (structure clone, not asset theft) |
-| `get_validation_grounding` | Pre-export norms pack for a **draft signature** — facts + arithmetic, never predictions |
+## Research
 
-## Remember (verbatim notes)
+| Tool | What it does |
+|---|---|
+| `list_watched_competitors` · `list_competitor_ads` · `get_competitor_activity` | What watched competitors run, and what changed |
+| `list_ad_breakdowns` · `get_ad_breakdown` · `request_ad_breakdown` | Scene-by-scene breakdowns of competitor ads |
+| `list_my_ads` · `get_my_ad_performance` · `get_my_tested_history` | The brand's own Meta results, as facts |
+| `search_ad_library` | Public ads from any advertiser |
 
-| Tool | Role |
-|------|------|
-| `save_context_note` | One-off correction / preference |
-| `save_brand_truth` | Durable truth: objective \| value_gradient \| creative_truth \| economics |
-| `save_plan` | Dated sale / launch / seasonal — read the date back |
-| `remember` | subject + relation + fact (supersedes prior same relation) |
-| `recall` | Semantic search over brand memory |
+## Prompts
 
-## Produce
+`adapts` · `where-are-we` · `phase-change` · `package`: starts that need no typing.
 
-| Tool | Role |
-|------|------|
-| `get_brief_grounding` | **Preferred.** Receipt-bound data; **you** author the brief |
-| `generate_creative_brief` | Deprecated server-authored brief |
+## Decisions
 
-## Authentication
-
-`X-API-Key` or `Authorization: Bearer`. Agents do not embed secrets in skill text.
-
-## Hard bans
-
-No pause / scale / kill / launch. No performance predictions. No "budget leak" / Spyder / autonomous pipeline language.
+Making the sizes, choosing another way for a size, putting a piece back or taking it off, saying
+what a piece of the design is, answering eonik's questions, approving: these are the person's. They reach eonik as clicks in its
+panel (tools a host hides from you) or as forms your host shows. You cannot call them.

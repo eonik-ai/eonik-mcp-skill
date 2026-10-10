@@ -1,12 +1,18 @@
 {
   "name": "eonik",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "settings": [
     {
       "name": "eonik API key",
-      "description": "Workspace API key from eonik settings. The assistant reads and drafts; it never spends.",
+      "description": "An eonik API key (Settings, API keys).",
       "envVar": "EONIK_API_KEY",
       "sensitive": true
+    },
+    {
+      "name": "eonik brand",
+      "description": "The brand this connection is about. Required if you have more than one.",
+      "envVar": "EONIK_BRAND_ID",
+      "sensitive": false
     }
   ],
   "mcpServers": {
@@ -14,7 +20,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "eonik-mcp@2.0.0"
+        "eonik-mcp@3.0.0"
       ]
     }
   }

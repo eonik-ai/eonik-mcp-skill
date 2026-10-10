@@ -10,4 +10,4 @@
   </p>
 </div>
 
-Anuncios terminados y on-brand, sin el trabajo pesado. El corte se hace en Mac. [Descargar](https://www.eonik.ai/download) · [Conectar un asistente](https://www.eonik.ai/mcp)
+Tu diseñador crea el máster. eonik hace todos los tamaños que pide tu plan de medios, fieles a la marca, en la app de eonik en tu Mac ([descargar](https://www.eonik.ai/download)). Pídelo desde Claude, ChatGPT, Cursor, Codex o VS Code: nada se crea, cambia ni envía hasta que tú lo digas. Este plugin enseña a tu asistente a pedírselo a eonik. [Conectar un asistente](https://www.eonik.ai/mcp)

@@ -4,7 +4,7 @@
   </a>
   <h1>eonik</h1>
   <p><strong>Finished, on-brand ads without the busywork.</strong></p>
-  <p>You see what’s worth making. eonik builds the cut. You approve. This folder is how the assistant should work once it can see your account. The cut itself is made on Mac.</p>
+  <p>Your designer makes the master. eonik makes every size your media plan asks for, on-brand, in the eonik app on your Mac. This plugin teaches your assistant to ask eonik for it.</p>
   <p>
     <a href="https://www.eonik.ai">Website</a> ·
     <a href="https://www.eonik.ai/download">Download for Mac</a> ·
@@ -27,42 +27,31 @@
 
 ---
 
-eonik gets you **finished, on-brand ads without the busywork.** You start from an ad that already works, build the cut from your footage, check it against your brand, and get it approved. **Never launch ads or move budget.**
+eonik makes a brand's **adapts**: every size a media plan asks for, from the designer's master,
+with the brand's fonts, rules and layout kept the same way on every size, then checked, sent for
+approval and delivered. The work runs in the **eonik app on your Mac**
+([download](https://www.eonik.ai/download)), where your files and fonts are.
 
-You make the cut in the **Mac app** ([download](https://www.eonik.ai/download)). This plugin is how Cursor, Claude, or another assistant should work once it can see the user’s account: ground in the brand, use the research archive, remember what they said, write briefs from facts.
-
-Connect the assistant at [eonik.ai/mcp](https://www.eonik.ai/mcp) through the host’s OAuth flow. Hosts without remote MCP support can run `npx -y eonik-mcp@2.0.0` with an API key.
-
-## What it covers
-
-| Goal | How |
-|------|-----|
-| Orient | Brand + notes you already saved |
-| Research | Competitor archive, ad breakdowns, how surviving ads are built |
-| Remember | Save your words verbatim |
-| Produce | Receipts in, **you** (or the assistant) author the brief |
-
-There is no “deploy to Meta.” Upload stays a human click.
+This plugin is the eonik connector plus a skill that teaches an assistant (Claude, Claude Code,
+Cursor, Codex, Gemini CLI) how to work with it: start with where things stand, hand the work to
+eonik in the person's own words, never edit their images itself, and never claim a choice that is
+theirs. See [SKILL.md](skills/eonik/SKILL.md) and the tools in [reference.md](reference.md).
 
 ## Install
 
-### Cursor and Agent Plugins hosts
+**Claude Code:** `/plugin install` this repository. Its `.mcp.json` connects to
+`https://api.eonik.ai/mcp`; sign in with your eonik account and choose the brand when asked.
 
-This repository implements the [Agent Plugins 1.0 standard](https://agent-plugins.org): `plugin.json` describes the plugin, `skills/eonik/SKILL.md` teaches the workflow, and `mcp.json` connects to eonik’s remote OAuth MCP.
+**Claude (Team, Enterprise):** an Owner adds the connector `https://api.eonik.ai/mcp` in
+Organization settings, Connectors, and can deploy this skill to the organization.
 
-Install it from Cursor Marketplace once approved, or load the repository as a local Agent Plugin. The host opens OAuth; do not paste an API key into chat.
+**Cursor and Agent Plugins hosts:** install from the marketplace, or load this repository; its
+`mcp.json` connects to the same server through the host's sign-in.
 
-### Claude and other skill hosts
+**Gemini CLI:** `gemini extensions install https://github.com/eonik-ai/eonik-mcp-skill.git`, with
+an eonik API key and the brand's id.
 
-Clone into the host’s skills folder, zip with **`SKILL.md` at the archive root**, or:
-
-```
-openclaw skills install @techievena/eonik
-```
-
-The Claude plugin adapter uses `npx -y eonik-mcp@2.0.0` and reads `EONIK_API_KEY` from the host environment. This repository does not hold API keys.
-
-Tool names for assistants: [reference.md](reference.md).
+Keep eonik open on your Mac while you work. Nothing is made, changed or sent until you say so.
 
 ## Also
 

@@ -9,4 +9,4 @@
   </p>
 </div>
 
-완성된 온브랜드 광고, 잡일 없이. 컷은 Mac에서 만듭니다. [다운로드](https://www.eonik.ai/download) · [어시스턴트 연결](https://www.eonik.ai/mcp)
+디자이너가 마스터를 만들면, eonik이 미디어 플랜에 필요한 모든 사이즈를 브랜드에 맞게 Mac의 eonik 앱에서 만듭니다([다운로드](https://www.eonik.ai/download)). Claude, ChatGPT, Cursor, Codex, VS Code에서 요청하세요. 직접 결정하기 전에는 아무것도 만들거나 바꾸거나 보내지 않습니다. 이 플러그인은 어시스턴트가 eonik에 요청하는 방법을 알려 줍니다. [어시스턴트 연결](https://www.eonik.ai/mcp)

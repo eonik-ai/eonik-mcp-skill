@@ -1,7 +1,7 @@
 {
   "name": "eonik",
-  "version": "2.0.0",
-  "description": "Finished, on-brand ads without the busywork. Connect to the user's eonik account: the assistant reads brand, research, and performance facts, then drafts. It never spends. You approve every cut on Mac.",
+  "version": "3.0.0",
+  "description": "Make a brand's adapts with eonik: every size of a creative, on-brand, checked, approved and delivered, made in the eonik app on the person's Mac.",
   "author": {
     "name": "eonik",
     "url": "https://www.eonik.ai"
@@ -9,6 +9,12 @@
   "homepage": "https://www.eonik.ai/mcp",
   "repository": "https://github.com/eonik-ai/eonik-mcp-skill",
   "license": "MIT-0",
-  "keywords": ["eonik", "ads", "brand", "mcp"],
+  "keywords": [
+    "eonik",
+    "adapts",
+    "resize",
+    "brand",
+    "mcp"
+  ],
   "skills": "./skills"
 }

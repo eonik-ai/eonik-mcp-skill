@@ -10,4 +10,4 @@
   </p>
 </div>
 
-Des pubs finies, on-brand, sans le sale boulot. Le montage se fait sur Mac. [Télécharger](https://www.eonik.ai/download) · [Connecter un assistant](https://www.eonik.ai/mcp)
+Votre designer crée le master. eonik fait toutes les tailles que demande votre plan média, fidèles à la marque, dans l'app eonik sur votre Mac ([télécharger](https://www.eonik.ai/download)). Demandez-le depuis Claude, ChatGPT, Cursor, Codex ou VS Code : rien n'est créé, modifié ou envoyé sans votre accord. Ce plugin apprend à votre assistant à le demander à eonik. [Connecter un assistant](https://www.eonik.ai/mcp)

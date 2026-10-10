@@ -1,33 +1,21 @@
 # Connect eonik
 
-The skill assumes the host already has eonik tools. Auth is the host connection. Nothing here stores keys.
+The skill assumes the host already has eonik's tools. Auth is the host's connection; nothing here
+stores a key. Keep the eonik app open on the Mac that holds the files.
 
-## Cursor / Agent Plugins hosts (remote OAuth)
+## Remote (Claude, ChatGPT, VS Code, Cursor, Claude Code)
 
-1. Install the eonik Agent Plugin from the marketplace or load this repository locally.
-2. The plugin’s `mcp.json` connects to `https://api.eonik.ai/mcp`.
-3. Complete the OAuth flow opened by the host, confirm eonik tools appear, then ask: “Orient me on this brand.”
+Add the connector `https://api.eonik.ai/mcp`, sign in with your eonik account and choose the brand
+the connection is about. Then ask: "Where are we?"
 
-## Claude Code / Grok Build (stdio)
+## Local hosts (Claude Desktop config file, Codex, Gemini CLI)
 
-1. Create an API key in eonik workspace settings.
-2. The plugin’s `.mcp.json` runs `npx -y eonik-mcp@2.0.0`. Set `EONIK_API_KEY` in the host env (and optional `EONIK_API_URL`, `EONIK_BRAND_ID`).
-3. Confirm tools appear, then ask: “Orient me on this brand.”
-
-## Gemini CLI
-
-Repo root has `gemini-extension.json`. After the GitHub topic `gemini-cli-extension` is on this public repo, the gallery crawls daily. Install:
-
-```
-gemini extensions install https://github.com/eonik-ai/eonik-mcp-skill.git
-```
-
-Set `EONIK_API_KEY` when prompted. Not gemini.google.com.
-
-## Claude.ai / ChatGPT / Perplexity (remote)
-
-Add connector URL `https://api.eonik.ai/mcp` and complete OAuth. Do not paste an API key into chat.
+1. Create an API key in eonik (Settings, API keys).
+2. Run `npx -y eonik-mcp@3.0.0` with `EONIK_API_KEY`, and `EONIK_BRAND_ID` if you have more than
+   one brand (eonik never guesses which client's work you mean).
+3. Ask: "Where are we?"
 
 ## Never
 
-Do not install a listing that offers `launch_ad_run`, `run_budget_audit`, or spend actions. Those are retired. The assistant reads and drafts. You approve every cut on Mac.
+The assistant never launches, pauses or spends, never predicts how an ad will perform, and never
+makes a choice that is yours.

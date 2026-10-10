@@ -9,4 +9,4 @@
   </p>
 </div>
 
-成品、符合品牌的广告，少做杂活。成片在 Mac 上完成。[下载](https://www.eonik.ai/download) · [连接助手](https://www.eonik.ai/mcp)
+设计师制作主稿，eonik 在你 Mac 上的 eonik 应用中，按品牌规范制作投放计划所需的每一个尺寸（[下载](https://www.eonik.ai/download)）。可以从 Claude、ChatGPT、Cursor、Codex 或 VS Code 发起：在你确认之前，不会制作、修改或发送任何内容。 此插件教你的助手如何请 eonik 来完成。 [连接助手](https://www.eonik.ai/mcp)

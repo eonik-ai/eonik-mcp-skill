@@ -68,7 +68,7 @@ They say: "Adapt the spring master to the launch set" · "These ten into GDN plu
 
 ### An exact change to a creative (`eonik://guide/change`)
 
-They said exactly what changes: words, a size, a place, a colour, a picture, or how a piece moves.
+They said exactly what changes: words, a size, a place, a color, a picture, or how a piece moves.
 
 They say: "Logo bigger on 300x250" · "Use the evening photo everywhere" · "Headline in white on the GDN sizes" · "Hide the offer on the leaderboard"
 

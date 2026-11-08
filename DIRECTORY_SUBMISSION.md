@@ -12,7 +12,7 @@ or makes a choice that is the person's.
 **GitHub URL:** https://github.com/eonik-ai/eonik-mcp-skill
 
 **Extra information:** Agent Plugins 1.0 package with the remote MCP server
-`https://api.eonik.ai/mcp` (OAuth). Local fallback: `npx -y eonik-mcp@4.0.0` with
+`https://api.eonik.ai/mcp` (OAuth). Local fallback: `npx -y eonik-mcp@5.0.0` with
 `EONIK_API_KEY` and `EONIK_BRAND_ID`. No secrets in the repository. MIT-0.
 
 **Related plugins:** None.

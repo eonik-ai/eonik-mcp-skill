@@ -11,7 +11,7 @@ the connection is about. Then ask: "Where are we?"
 ## Local hosts (Claude Desktop config file, Codex, Gemini CLI)
 
 1. Create an API key in eonik (Settings, API keys).
-2. Run `npx -y eonik-mcp@4.0.0` with `EONIK_API_KEY`, and `EONIK_BRAND_ID` if you have more than
+2. Run `npx -y eonik-mcp@5.0.0` with `EONIK_API_KEY`, and `EONIK_BRAND_ID` if you have more than
    one brand (eonik never guesses which client's work you mean).
 3. Ask: "Where are we?"
 

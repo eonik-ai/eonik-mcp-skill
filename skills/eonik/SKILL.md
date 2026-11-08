@@ -26,7 +26,7 @@ The work on creatives runs in the eonik app on the person's computer, signed in 
 3. The person decides. Making the sizes, keeping a change, approving, sending and spending are theirs: they press them in eonik's panel, in a form your host shows, or in eonik itself. Say what is waiting for them; do not say it is done.
 4. Say what eonik says, as it says it: when eonik is not open, is signed in as another account, may not spend, or needs a line confirmed.
 5. Every price is the person's to confirm, before anything that costs is made.
-6. A change is a new state of the creative: `undo_change` puts it back, and the state it had is saved first.
+6. A change is a new state of the creative: `change_creative` with `back_to` puts it back, and the state it had is saved first.
 
 ## Their words
 
@@ -40,15 +40,35 @@ Making, changing, checking, sending and delivering start a job in eonik. Where y
 
 Each is also served as a guide, `eonik://guide/<name>`, to a host without this skill.
 
+### Setting eonik up (`eonik://guide/set-up`)
+
+When the person is new to eonik, says to set it up, or a tool says a step is missing.
+
+They say: "Set eonik up for my brand." · "Here's our site, acme.com." · "What's left to set up?" · "Work on the other brand." · "Watch Gymshark for us."
+
+1. `get_setup`: where their eonik stands and the one next step, with the tool to use or the page where the person does it.
+2. No brand yet: ask for the website if they have not said it, then `create_brand` with it (and the name, if they said one).
+3. Several brands and none chosen: `get_setup` lists them; ask which, then `use_brand`.
+4. Then follow `get_setup`'s next step; where it names a page, give the person the link and say what they will do there.
+5. Say what eonik read from the site and that they can correct it on eonik.ai.
+6. Competitors: `add_competitors` with every one they named, each as their Ads Library or Instagram link or their name exactly as said. A name comes back as the page the Ad Library shows: ask the person if it is the one, and only then call again with its link. Say what eonik said follows: the Monday email about them, or what the plan does not do.
+7. Teammates: `invite_teammates` with their addresses; each gets eonik's invitation.
+8. Their ads: `connect_source` with where they run (meta, tiktok or google), then give the person its link; they sign in there and choose the ad account on eonik.ai.
+9. Plan and credits: `get_setup` says them as facts, with the page that says what each plan includes. Out of credits or outside the plan, say so and give that page; the person chooses a plan there, never you.
+
+- Never invent a website or a brand name: ask.
+- An invitation waiting for them comes first: say who invited them, and make a separate brand only if they still want one (`alongside_invitation`).
+- An unconfirmed email address is theirs to confirm: give them the page, do not retry.
+- Never add a competitor the person has not confirmed, and never guess their page.
+
 ### Where things stand (`eonik://guide/where-are-we`)
 
 At the start of a session about the person's creatives, or when they ask what is waiting.
 
 They say: "Where are we?" · "What came back from the client?" · "Is anything waiting for me?"
 
-1. `get_adapts_status`: what needs them, what is being made, what the client sent back, and whether eonik is open on their computer.
-2. For the client's words, `get_client_notes`.
-3. Say what is waiting for them first.
+1. `get_work`: what needs them, what is being made, what was delivered, what reviewers said in their own words, and whether eonik is open on their computer.
+2. Say what is waiting for them first.
 
 - A job still running is not done: say it is being made, and check again when they ask, not in a loop.
 
@@ -75,11 +95,11 @@ They say: "Logo bigger on 300x250" · "Use the evening photo everywhere" · "Hea
 1. `get_creative` first: each size's pieces, their words and places, and a picture of every size.
 2. For another of the brand's pictures, `find_brand_pictures`, then its `ref` as the change's `picture`.
 3. `change_creative` with each piece named by what it is for (`headline`, `logo`, `photo`, or `line` with the words it says), what changes, and the sizes. eonik makes it, reads it back size by size, and the person keeps it or puts it back.
-4. `compare_versions` shows it beside the state before, as pictures.
+4. `get_creative` with `compare_with: "before"` shows it beside the state before, as pictures.
 
-- A change said as an outcome, such as "make it feel premium", is `revise_adapts`: eonik decides what to change.
+- A change said as an outcome, such as "make it feel premium", is `change_creative` with no pieces named: eonik decides what to change, and the person sees it first.
 - A figure no project fact supports is refused by eonik; ask the person for its source.
-- Taken back later: `undo_change` with the state from `get_creative`'s history.
+- Taken back later: `change_creative` with `back_to`, a state from `get_creative`'s history.
 
 ### A static made into a reel (`eonik://guide/reel`)
 
@@ -125,7 +145,7 @@ They want an existing ad remade with the brand's product, person or place.
 
 They say: "Remake Lodha's café reel with our new serum" · "Recreate our Diwali ad in a café"
 
-1. `recreate_ad` with the ad as they named it (a saved ad, one of the brand's own, or a link) and what goes in it.
+1. `make_ad` with `from_ad`, the ad as they named it (a saved ad, one of the brand's own, or a link), and what goes in it.
 2. eonik plans it: who becomes whom in which shots, what stays and what it cannot use, with the price. The person approves it once.
 3. Another brand's footage is reused only when the person says they may.
 
@@ -137,11 +157,11 @@ The client sent a creative back with notes.
 
 They say: "Put the client's notes in" · "What did the client say?" · "Fix the client's notes and send v3"
 
-1. `get_client_notes`: each note, who wrote it, the size it is on, and each creative's `creative_file`.
+1. `get_work`: each note, who wrote it, the size it is on, and each creative's `creative_file`.
 2. For each note, pass its creative's `creative_file` as `creative` to `get_creative`, then to `change_creative`, making exactly what the note asks, on the size it was left on. The person keeps each change.
 3. `send_for_approval` sends the new version, and `answer_client_note` answers each note the person kept a change for, saying what was done.
 
-- A note that asks for an outcome, not a change, is `revise_adapts`.
+- A note that asks for an outcome, not a change, is `change_creative` with no pieces named and the note as `their_words`.
 - Answer a note only once its change is kept.
 
 ### Check, approve and deliver (`eonik://guide/package`)
@@ -163,7 +183,7 @@ They have a zip or a folder, theirs or an agency's, to check against a media pla
 
 They say: "Check the agency's zip against the media plan" · "Is this package ready for Google?"
 
-1. `check_package` with the package and the sizes asked for: each file measured off its own bytes against its channel's limits.
+1. `check_before_sending` with the `package` (or the file attached) and the `sizes` asked for: each file measured off its own bytes against its channel's limits.
 2. Report it file by file: what is missing, over a limit, or in the wrong format.
 
 ### A product's facts changed (`eonik://guide/facts-change`)
@@ -207,9 +227,9 @@ They ask about the brand's rules, what they told eonik, competitors, or their ow
 
 They say: "What are our brand's rules?" · "Remember: never the old logo" · "What are competitors running?" · "Break that ad down" · "How did our ads do?"
 
-1. The brand: `get_brand_overview`, `search_brand_memory`; a rule or a dated plan they state: `save_brand_note`, `save_dated_plan`, with their sentence exactly, read back.
-2. Competitors: `list_watched_competitors`, `list_competitor_ads`, `get_competitor_activity`; a breakdown: `list_ad_breakdowns`, `get_ad_breakdown`, or `request_ad_breakdown` when it has none.
-3. Their own ads: `list_my_ads`, `get_my_ad_performance`, `get_my_tested_history`. Any advertiser: `search_ad_library`.
+1. The brand: `get_brand` (with `search` for what they told eonik on a topic); a rule or a dated plan they state: `save_brand_note` or `save_dated_plan`, with their sentence exactly, read back.
+2. Competitors: `get_competitor_ads` (who is watched, what changed, their ads); a breakdown: `get_ad_breakdown`, or `request_ad_breakdown` when it has none.
+3. Their own ads: `get_my_ads` (one ad when they name it). Any advertiser: `search_ad_library`.
 
 - Say what an ad is and what was recorded about it, not whether it will work.
 

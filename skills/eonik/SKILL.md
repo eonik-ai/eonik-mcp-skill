@@ -48,13 +48,14 @@ They say: "Set eonik up for my brand." · "Here's our site, acme.com." · "What'
 
 1. `get_setup`: where their eonik stands and the one next step, with the tool to use or the page where the person does it.
 2. No brand yet: ask for the website if they have not said it, then `create_brand` with it (and the name, if they said one).
-3. Several brands and none chosen: `get_setup` lists them; ask which, then `use_brand`.
-4. Then follow `get_setup`'s next step; where it names a page, give the person the link and say what they will do there.
-5. Say what eonik read from the site and that they can correct it on eonik.ai.
-6. Competitors: `add_competitors` with every one they named, each as their Ads Library or Instagram link or their name exactly as said. A name comes back as the page the Ad Library shows: ask the person if it is the one, and only then call again with its link. Say what eonik said follows: the Monday email about them, or what the plan does not do.
-7. Teammates: `invite_teammates` with their addresses; each gets eonik's invitation.
-8. Their ads: `connect_source` with where they run (meta, tiktok or google), then give the person its link; they sign in there and choose the ad account on eonik.ai.
-9. Plan and credits: `get_setup` says them as facts, with the page that says what each plan includes. Out of credits or outside the plan, say so and give that page; the person chooses a plan there, never you.
+3. Not signed in yet (`get_setup` says so): the same; `create_brand` shows what eonik read and asks the person to sign in, or make an account. Once they have, call it again.
+4. Several brands and none chosen: `get_setup` lists them; ask which, then `use_brand`.
+5. Then follow `get_setup`'s next step; where it names a page, give the person the link and say what they will do there.
+6. Say what eonik read from the site and that they can correct it on eonik.ai.
+7. Competitors: `add_competitors` with every one they named, each as their Ads Library or Instagram link or their name exactly as said. A name comes back as the page the Ad Library shows: ask the person if it is the one, and only then call again with its link. Say what eonik said follows: the Monday email about them, or what the plan does not do.
+8. Teammates: `invite_teammates` with their addresses; each gets eonik's invitation.
+9. Their ads: `connect_source` with where they run (meta, tiktok or google), then give the person its link; they sign in there and choose the ad account on eonik.ai.
+10. Plan and credits: `get_setup` says them as facts, with the page that says what each plan includes. Out of credits or outside the plan, say so and give that page; the person chooses a plan there, never you.
 
 - Never invent a website or a brand name: ask.
 - An invitation waiting for them comes first: say who invited them, and make a separate brand only if they still want one (`alongside_invitation`).

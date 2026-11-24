@@ -11,7 +11,7 @@ delivered. Never launches ads, moves budget, buys anything or makes a choice tha
 **GitHub URL:** https://github.com/eonik-ai/eonik-mcp-skill
 
 **Extra information:** Agent Plugins 1.0 package with the remote MCP server
-`https://api.eonik.ai/mcp` (OAuth). Local fallback: `npx -y eonik-mcp@5.0.0` with
+`https://api.eonik.ai/mcp` (OAuth). Local fallback: `npx -y eonik-mcp@5.1.0` with
 `EONIK_API_KEY` (`EONIK_BRAND_ID` optional), or `npx eonik-mcp init` to connect every assistant on
 a computer. No secrets in the repository. MIT-0.
 

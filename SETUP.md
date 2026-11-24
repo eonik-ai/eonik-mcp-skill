@@ -17,7 +17,7 @@ Then ask: "Set eonik up for my brand." or "Where are we?"
 ## Local hosts (Claude Desktop config file, Gemini CLI)
 
 1. Create an API key in eonik (Settings, API keys).
-2. Run `npx -y eonik-mcp@5.1.0` with `EONIK_API_KEY`. `EONIK_BRAND_ID` is optional: with more than
+2. Run `npx -y eonik-mcp@5.2.0` with `EONIK_API_KEY`. `EONIK_BRAND_ID` is optional: with more than
    one brand you choose in the conversation, and eonik never guesses which client's work you mean.
 3. Ask: "Where are we?"
 
